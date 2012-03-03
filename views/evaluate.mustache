@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="../../stylesheets/evaluate.css">		
+
+<div class="container">
+
+		<div class="eval">
+		<form method="post" action="../evaluate/theshold">
+		<button type="submit id="getThresh">Get Threshold</button>
+			<div class = "threshWrapper">
+			<label for= "selectThresh"> Select which thresholds to show</label>
+			<select name="threshold" class="customThresholdSelector">
+				{{#threshold}}
+				<option value="{{t}}">{{t}}</option>
+				{{/threshold}}
+			</select>
+			</div>
+		</form>
+		</div>
+					
+
+
+		<div class="topTaggerWrapper">
+		<form method="post" action="../evaluate/limit">
+		<button  type="submit" id="getNewMsg">Get New Messages</button>
+			<div class = "limitWrapper">		
+			<label for="limitSelector">Select how many messeges to get</label>
+  			<select name="limit" class="customTaggingSelector">
+				{{#limit}}
+				<option value="{{n}}">{{n}}</option>
+				{{/limit}}
+  			</select>
+			</div>
+		</form>
+		</div>
+        	<div class="five columns alpha taggingMsg">
+			<div class="messageContainer top">
+				<p class="message">Messages</p>
+			</div>
+{{#users}}
+        <li> {{name}} </li>
+    {{/users}}
+			{{#messages}}
+				<div class="messageContainer odd">
+        			<p class="messageText">{{source}}</p><p class="date">{{created_at}}</p>
+				<div>
+			{{/messages}}
+
+
+			<div class="messageContainer odd">
+				<p class="messageText">Messages</p><p class="date">7/30 - 2012</p>
+			</div>
+			<div class="messageContainer even">
+				<p class="messageText">Messages</p>
+			</div>
+			
+
+			<div class="messageContainer odd">
+				<p class="messageText">Messages</p>
+			</div>
+			<div class="messageContainer even">
+				<p class="messageText">Messages</p>
+			</div>
+
+			<div class="messageContainer odd">
+				<p class="messageText">Messages</p>
+			</div>
+			<div class="messageContainer even">
+				<p class="messageText">Messages</p>
+			</div>
+
+
+			<div class="messageContainer odd">
+				<p class="messageText">Messages</p>
+			</div>
+			<div class="messageContainer even">
+				<p class="messageText">Messages</p>
+			</div>
+
+
+
+			<div class="messageContainer odd">
+				<p class="messageText">Messages</p>
+			</div>
+			<div class="messageContainer even">
+				<p class="messageText">Messages</p>
+			</div>
+
+			<div class="messageContainer odd">
+				<p class="messageText">Messages</p>
+			</div>
+			<div class="messageContainer even">
+				<p class="messageText">Messages</p>
+			</div>
+
+
+
+			<div class="messageContainer odd">
+				<p class="messageText">Messages</p>
+			</div>
+			<div class="messageContainer even">
+				<p class="messageText">Messages</p>
+			</div>
+
+
+
+
+
+			<div class="messageContainer odd">
+				<p class="messageText">Messages</p>
+			</div>
+			<div class="messageContainer even">
+				<p class="messageText">Messages</p>
+			</div>
+
+
+			<div class="messageContainer odd">
+				<p class="messageText">Messages</p>
+			</div>
+			<div class="messageContainer even">
+				<p class="messageText">Messages</p>
+			</div>
+
+
+			<div class="messageContainer odd">
+				<p class="messageText">Messages</p>
+			</div>
+			<div class="messageContainer even">
+				<p class="messageText">Messages</p>
+			</div>
+
+			<div class="messageContainer odd">
+				<p class="messageText">Messages</p>
+			</div>
+			<div class="messageContainer even">
+				<p class="messageText">Messages</p>
+			</div>
+
+			<div class="messageContainer odd">
+				<p class="messageText">Messages</p>
+			</div>
+			<div class="messageContainer even">
+				<p class="messageText">Messages</p>
+			</div>
+
+
+
+			<div class="messageContainer odd">
+				<p class="messageText">Messages</p>
+			</div>
+			<div class="messageContainer even">
+				<p class="messageText">Messages</p>
+			</div>
+
+
+
+
+
+			<div class="messageContainer odd">
+				<p class="messageText">Messages</p>
+			</div>
+			<div class="messageContainer even">
+				<p class="messageText">Messages</p>
+			</div>
+
+
+			<div class="messageContainer odd">
+				<p class="messageText">Messages</p>
+			</div>
+			<div class="messageContainer even">
+				<p class="messageText">Messages</p>
+			</div>
+
+
+			<div class="messageContainer odd">
+				<p class="messageText">Messages</p>
+			</div>
+			<div class="messageContainer even">
+				<p class="messageText">Messages</p>
+			</div>
+
+
+		</div>
+		<div class="ten columns omega fixedPosition">Put detailed info about the messeges here.</div>
+</div>
+

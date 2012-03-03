@@ -1,0 +1,57 @@
+.topTaggerWrapper{
+	float:left;
+	width:100%;
+}
+.limitWrapper{
+	float:left;
+	margin-left:20px;
+}
+#getNewMsg{
+	float:left;
+	margin-top:10px;
+}
+.customTaggingSelector{
+	width:80px;
+}
+.taggingMsg{
+	border-style:solid;
+	border-width:1px;
+	border-color:#999999;
+}
+.top{
+	background-color:#777777;
+}
+p.message{
+	margin:0;
+	text-align: center;
+	color:#000000;
+}
+p.messageText{
+	margin:0;
+	padding-left:5px;
+	color:#000000;
+	float:left;
+	width:185px;
+}
+p.date{
+	margin:0;
+	color:#000000;
+	width:90px;
+	float:left;
+}
+.messageContainer{
+	border-style:solid;
+	border-width:0px 0px 1px 0px;
+	float:left;
+	width:100%;
+}
+.even{
+	background-color:#CCCCCC;
+}
+.fixedPosition{
+	position:fixed;
+	left:497px;
+	top:215px;
+	border-style:solid;
+	border-width:1px;
+}
