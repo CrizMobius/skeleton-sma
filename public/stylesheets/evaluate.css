@@ -61,11 +61,16 @@ p.messageDate p.messageAuthor p.Coordinates p.messageTags{
 }
 .fixedPosition{
 	position:fixed;
-	left:497px;
+	left:520px;
 	top:215px;
 	border-style:solid;
-	border-width:1px;
+	border-width:2px;
+	padding:10px; 
 }
+.padder{
+	padding-bottom:150px;
+	padding-right:20px; 
+}	
 tr:nth-child(even) {background: #CCCCCC;}
 tr:nth-child(odd) {background: #FFFFFF;}
 tr.messageItem:hover{background:#00CCFF;}
