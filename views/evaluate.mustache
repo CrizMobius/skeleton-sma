@@ -27,9 +27,9 @@
 			{{/messages}}
 
 		</table>
-		<div class="hidden ten columns omega fixedPosition">
 		{{#messages}}
-			<div id="full{{_id}}" class="fullMessageContainer">	
+			<div class="hidden ten columns omega fixedPosition" id="full{{_id}}">
+			<div class="fullMessageContainer">	
 				<h3> Message: </h3>
 				<p class="messageText">{{text}}</p>
 				<h3> Date: </h3>
@@ -40,7 +40,7 @@
 				<p class="messageCoordinates">{{coords}}</p>
 				<h3> Tags: </h3>
 				<p class="messageTags">{{tags}}</p>
-			<div>
+			</div>
+			</div>
 		{{/messages}}
-		</div>
 </div>
