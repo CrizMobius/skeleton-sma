@@ -8,22 +8,12 @@ class EvaluateController < ApplicationController
 		count = 10
 		retriever = EvaluateRetrieve.new()
 		
-		if(params.has_key?('filter'))
-			filters = params.fetch('filter')
-			filters = filters.gsub(' ', ',')
-			sanitized = filters.split(',')
-			sanitized.delete_if(&:empty?)
-			filters = ''
-			sanitized.each do |value|
-				filters = filters.concat(value).concat(',')
-			end
-			filters = filters.chomp(',')
-			@filters = filters
+		if(params.has_key?('filter'))  
+			@filters = filterFunction('filter')
 		else
 			@filters = ''
 		end
 		@messages = retriever.RetrieveClassificationObjects(count,@filters)
-		puts @messages
 		mustache :evaluate
 	end
 	#Displays a given limit of messages from classifier using the evaluate view
@@ -31,21 +21,26 @@ class EvaluateController < ApplicationController
 		count = params.fetch("limit")
 		retriever = EvaluateRetrieve.new()
 		if(params.has_key?('filter'))
-			filters = params.fetch('filter')
-			filters = filters.gsub(' ', ',')
-			sanitized = filters.split(',')
-			sanitized.delete_if(&:empty?)
-			filters = ''
-			sanitized.each do |value|
-				filters = filters.concat(value).concat(',')
-			end
-			filters = filters.chomp(',')
-			@filters = filters
+			@filters = filterFunction('filter')
 		else
 			@filters = ''
 		end
 		@messages = retriever.RetrieveClassificationObjects(count,@filters)
-		puts @messages
 		mustache :evaluate
+	end
+
+	def filterFunction(filter)
+		filters = params.fetch('filter') # Get the searchfilters.
+			filters = filters.gsub(' ', ',') # Replaces all the ' ' with ','
+			sanitized = filters.split(',')   # Splits all the strings at ','
+			sanitized.delete_if(&:empty?)    # "Delete if empty"
+			filters = ''
+			sanitized.each do |value|
+				filters = filters.concat(value).concat(',') # Join two strings together.
+			end
+			filters = filters.chomp(',')     # Remove all the ',' from filters.
+			return filters
+		
+		
 	end
 end
