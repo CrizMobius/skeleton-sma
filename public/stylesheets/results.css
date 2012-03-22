@@ -1,0 +1,77 @@
+.topEvaluateWrapper{
+	float:left;
+	width:100%;
+}
+.limitWrapper{
+	float:left;
+	margin-left:20px;
+}
+#getNewMsg{
+	float:left;
+	margin-top:10px;
+}
+.customLimitSelector{
+	width:80px;
+}
+.evaluateMsg{
+	border-style:solid;
+	border-width:1px;
+	border-color:#999999;
+}
+.top{
+	background-color:#777777;
+}
+.partialContainer{
+	border-style:solid;
+	border-width:0px 0px 1px 0px;
+	float:left;
+	width:100%;
+}
+p.partialText{
+	margin:0;
+	text-align: center;
+	color:#000000;
+}
+p.partialDate{
+	margin:0;
+	text-align: center;
+	color:#000000;
+}
+div.hidden{
+	display:none!important;
+}
+.messageContainer{
+	border-style:solid;
+	border-width:0px 0px 1px 0px;
+	float:left;
+	width:100%;
+}
+p.messageText{
+	margin:0;
+	padding-left:5px;
+	color:#000000;
+	float:left;
+	width:250px;
+}
+p.messageDate p.messageAuthor p.Coordinates p.messageTags{
+	margin:0;
+	color:#000000;
+	width:90px;
+	float:left;
+}
+.fixedPosition{
+	position:fixed;
+	left:520px;
+	top:215px;
+	border-style:solid;
+	border-width:2px;
+	padding:10px; 
+}
+.padder{
+	padding-bottom:150px;
+	padding-right:20px; 
+}	
+tr:nth-child(even) {background: #CCCCCC;}
+tr:nth-child(odd) {background: #FFFFFF;}
+tr.messageItem:hover{background:#00CCFF;}
+tr.selected{background:#00CC66!important;}
