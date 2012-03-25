@@ -3,8 +3,10 @@
 <script src="../../javascripts/results.js"></script>
 <div class="container">
 		<div class="topresultsWrapper">
-		<form method="post" action="../results/limit">
-		<button  type="submit" id="getNewMsg">Get New Messages</button>
+		<form method="post" action="" id="resultsForm" >
+		<button type="submit" id="getNewMsg" onclick="limitPost()">Get New Messages</button>
+		<button type="submit" id="sendToGraph" onclick="staticGraphPost()">Show Static Graph</button>
+		<button type="submit" id="sendToGoogleMaps" onclick="googlePost()">Google Maps</button>
 			<div class = "limitWrapper">		
 			<label for="limitSelector">Select how many messeges to get</label>
   			<select name="limit" class="customLimitSelector">
@@ -18,6 +20,8 @@
 				<input name="filter" type="text"  class="filterInputField">
 			</div>
 		</form>
+		
+			
 		</div>
         	<table class="five columns alpha resultsMsg">
 			<tr class="partialContainer top">

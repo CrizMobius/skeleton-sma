@@ -21,3 +21,18 @@ function hideInfo(postID) {
     element.addClass('hidden'); 			//Ska vara hidden
     $('#'+'partial' + postID).removeClass('selected');	//info ej selected
 }
+
+function limitPost(){
+	$('#resultsForm').attr('action', '../results/limit');
+	$('#resultsForm').submit();
+}
+
+function staticGraphPost(){
+	$('#resultsForm').attr('action', '../results/static');
+	$('#resultsForm').submit();
+}
+
+function googlePost(){
+	$('#resultsForm').attr('action', '../results/map');
+	$('#resultsForm').submit();
+}

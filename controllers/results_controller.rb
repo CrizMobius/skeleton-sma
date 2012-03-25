@@ -35,6 +35,14 @@ class ResultsController < ApplicationController
 		mustache :static_graph
 	end
 
+	post '/results/static' do
+		mustache :static_graph
+	end
+	#Google
+	post '/results/map' do
+		mustache :google_map
+	end
+
 	get '/results/edit' do
 		mustache :edit_algorithms
 	end
