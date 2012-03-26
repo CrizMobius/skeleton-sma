@@ -62,7 +62,7 @@ p.messageDate p.messageAuthor p.Coordinates p.messageTags{
 .fixedPosition{
 	position:fixed;
 	left:520px;
-	top:215px;
+	top:150px;
 	border-style:solid;
 	border-width:2px;
 	padding:10px; 
@@ -70,6 +70,10 @@ p.messageDate p.messageAuthor p.Coordinates p.messageTags{
 .padder{
 	padding-bottom:150px;
 	padding-right:20px; 
+}
+.filterPadding{
+	padding-left:50px;
+
 }	
 tr:nth-child(even) {background: #CCCCCC;}
 tr:nth-child(odd) {background: #FFFFFF;}

@@ -1,4 +1,4 @@
-.topEvaluateWrapper{
+.topResultsWrapper{
 	float:left;
 	width:100%;
 }
@@ -13,7 +13,7 @@
 .customLimitSelector{
 	width:80px;
 }
-.evaluateMsg{
+.resultsMsg{
 	border-style:solid;
 	border-width:1px;
 	border-color:#999999;
@@ -62,7 +62,7 @@ p.messageDate p.messageAuthor p.Coordinates p.messageTags{
 .fixedPosition{
 	position:fixed;
 	left:520px;
-	top:215px;
+	top:150px;
 	border-style:solid;
 	border-width:2px;
 	padding:10px; 

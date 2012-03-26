@@ -5,9 +5,9 @@
 <div class="container">
 		<div class="topEvaluateWrapper">
 		<form method="post" action="../evaluate/limit">
-		<button  type="submit" id="getNewMsg">Get New Messages</button>
+		<button type="submit" id="getNewMsg">Get New Messages</button>
 			<div class = "limitWrapper">		
-			<label for="limitSelector">Select how many messeges to get</label>
+			<label for="limitSelector">Amount of Tweets</label>
   			<select name="limit" class="customLimitSelector">
 				{{#limit}}
 				<option value="{{n}}">{{n}}</option>
@@ -15,6 +15,7 @@
   			</select>
 			</div>
 			<div class="filterDiv" >
+				<br><br><br>
 				<label for="filter">Write comma-seperated tags for filter</label>
 				<input name="filter" type="text"  class="filterInputField" value="{{keywords}}">
 			</div>
@@ -37,17 +38,21 @@
 		{{#messages}}
 			<div class="hidden ten columns omega fixedPosition" id="full{{_id}}">
 			<div class="fullMessageContainer">	
-				<h3> Message: </h3>
-				<p class="messageText  padder">{{text}}</p>
-				<h3> Date: </h3>
+				<h4> Message: </h4>
+				<p class="messageText">{{text}}</p>
+				<br><br><br><br><br>
+				<h4> Date: </h4>
 				<p class="messageDate">{{date_created}}</p>
-				<h3> Author: </h3>
+				<h4> Author: </h4>
 				<p class="messageAuthor">{{author}}</p>
-				<h3> Coordinates: </h3>
+				<h4> Coordinates: </h4>
 				<p class="messageCoordinates">{{coords}}</p>
-				<h3> Tags: </h3>
+				<h4> Tags: </h4>
 				<p class="messageTags">{{tags}}</p>
+				<br><br>
+				
 			</div>
 			</div>
 		{{/messages}}
 </div>
+<br><br><br><br><br><br><br><br>
