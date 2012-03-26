@@ -28,6 +28,7 @@ class ResultsController < ApplicationController
 			@filters = ''
 		end 
 		@messages = retriever.RetrieveClassificationObjects(count,@filters)
+		@keywords = params.fetch('filter')
 		mustache :results
 	end
 	#this is temporary solution until result form provides dual button submits
@@ -64,10 +65,12 @@ class ResultsController < ApplicationController
 			sanitized = filters.split(',')   # Splits all the strings at ','
 			sanitized.delete_if(&:empty?)    # "Delete if empty"
 			filters = ''
+			filters.concat('%7B')
 			sanitized.each do |value|
-				filters = filters.concat(value).concat(',') # Join two strings together.
+				filters = filters.concat('%22').concat(value).concat('%22:0.9') # Join two strings together.
 			end
-			filters = filters.chomp(',')     # Remove all the ',' from filters.
+			filters.concat('%7D')
+			#filters = filters.chomp(',')     # Remove the last ',' from filters.
 			return filters
 	end
 end

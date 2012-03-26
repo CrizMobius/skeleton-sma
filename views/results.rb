@@ -8,6 +8,9 @@ class ApplicationController
             def messages
                 @messages
             end
+	    def keywords
+        	@keywords
+       	    end
 	end
     end
 end
