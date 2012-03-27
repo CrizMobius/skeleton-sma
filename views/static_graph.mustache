@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="../../stylesheets/static_graph.css">
+<link rel="stylesheet" type="text/css" href="../../javascripts/calendar/css/jscal2.css">
+<link rel="stylesheet" type="text/css" href="../../javascripts/calendar/css/border-radius.css">
+<link rel="stylesheet" type="text/css" href="../../javascripts/calendar/css/gold/gold.css">
 
-<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>		
-<script src="../../javascripts/static_graph.js"></script>
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../excanvas.min.js"></script><![endif]-->
 
 <div class="container">
 	<div class="tagsWrapper">
@@ -10,10 +12,25 @@
 			<button  type="submit" id="updateData">Update graph data</button>
 			<div class="filterDiv">
 				<label for="filter">Write comma-seperated tags for filter</label>
-				<input id="tags" name="filter" type="text"  class="filterInputField"></input>
+				<input id="tagSelected-box" name="filter" type="text"  class="filterInputField" size="15px"></input>
 			</div>
 		</form>
 	</div>
-	<div class="graph">
-	</div>
+  <div id="placeholder" style="width:800px;height:400px;"></div>
+  <div id="start-calendar-container"></div>
+  <input id="start-calendar" size = "25px">
+  <input id="start-calendar-time" size = "10px">
+  <div id="end-calendar-container"></div>
+  <input id="end-calendar" size = "25px">
+  <input id="end-calendar-time" size = "10px">
 </div>
+
+
+<script language="javascript" type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>		
+<script language="javascript" type="text/javascript" src="../../javascripts/flot/jquery.flot.js"></script>
+<script language="javascript" type="text/javascript" src="../../javascripts/flot/jquery.flot.selection.js"></script>
+<script type="text/javascript" src="../../javascripts/calendar/js/jscal2.js"></script>
+<script type="text/javascript" src="../../javascripts/calendar/js/lang/en.js"></script>
+
+<script language="javascript" type="text/javascript" src="../../javascripts/static_graph.js"></script>
+
