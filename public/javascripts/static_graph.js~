@@ -231,7 +231,7 @@ var storeDataToArray = function (data)
 var sta = new Date ();  
   taggedDatasets[countOfStoredTags].timeArray.sort (function (a, b) {return a-b;});   // now we need sort!
     var current = new Date();
-//alert ((current - sta) + 's');
+alert ((current - sta) + 's');
 
   countOfStoredTags++;  
 }
