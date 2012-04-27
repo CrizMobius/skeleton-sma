@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="../../stylesheets/static_graph.css">
+<link rel="stylesheet" href="../../stylesheets/dynamic_graph.css">
 <link rel="stylesheet" type="text/css" href="../../javascripts/calendar/css/jscal2.css">
 <link rel="stylesheet" type="text/css" href="../../javascripts/calendar/css/border-radius.css">
 <link rel="stylesheet" type="text/css" href="../../javascripts/calendar/css/gold/gold.css">
@@ -13,18 +13,17 @@
 			<label for="filter">Write comma-seperated tags for filter</label>
 			<input id="tagSelected-box" name="filter" type="text"  class="filterInputField" size="15px"></input>
 		</div>
-	<div id="placeholder"></div>
+	<div id="placeholder" style="width:800px;height:400px;"></div>
 	<br>
 	<div id="cal">
 	  <div id="start-cal">
-	    <div id="start-text">Start Date</div>
     	<div id="start-calendar-container"></div>
-    	<input size="19px" id="start-calendar-input"></input>
+    	<input size="16px" id="start-calendar-input"></input>
     </div>
+  	<button id="time-apply">Time Apply</button>
   	<div id="end-cal">
-      <div id="end-text">End Date</div>
     	<div id="end-calendar-container"></div>
-    	<input size="19px" id="end-calendar-input"></input>
+    	<input size="16px" id="end-calendar-input"></input>
     	</div>
   </div>
   </div>
@@ -35,5 +34,5 @@
 
 <script language="javascript" type="text/javascript" src="../../javascripts/flot/jquery.flot.js"></script>
 <script language="javascript" type="text/javascript" src="../../javascripts/flot/jquery.flot.selection.js"></script>
-<script language="javascript" type="text/javascript" src="../../javascripts/static_graph.js"></script>
+<script language="javascript" type="text/javascript" src="../../javascripts/dynamic_graph.js"></script>
 

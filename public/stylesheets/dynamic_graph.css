@@ -1,0 +1,27 @@
+#updateData{
+	float:left;
+	margin-top:10px;
+}
+.tagsWrapper{
+	float:left;
+	width:100%;
+}
+
+#cal{
+  margin-left:80px;
+  margin-bottom:300px;
+}
+
+#start-cal{
+  width:200px;
+  float:left;
+}
+#time-apply{
+  margin:80px;
+  width:100px;
+  float:left;
+}
+#end-cal{
+  width:200px;
+  float:left;
+}

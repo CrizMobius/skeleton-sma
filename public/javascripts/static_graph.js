@@ -1,7 +1,7 @@
 /**
  * @author Shinichi
  * this is script file for static graph.
- * based on 5.4.3.5 in ADD.
+ * based on 5.4.3.4 in ADD.
  */
 
 // -function isOutOfDefault-
@@ -178,10 +178,8 @@ var drawStaticGraph = function (array)
       newArray.length = 0;
       newArray = setPlotArray (100, Math.round (ranges.xaxis.from), Math.round (ranges.xaxis.to))
       data.length = 0;
-      //alert (taggedDatasets.length);
       for (var m = 0; m < newArray.length; m++)
       {
-        //alert (m);
         data.push (
         {
           data : newArray[m].number,
@@ -226,13 +224,7 @@ var storeDataToArray = function (data)
     //var withoutOffset = withOffset - offset;
     taggedDatasets[countOfStoredTags].timeArray.push (milliDate);
   }
-  
-  
-var sta = new Date ();  
   taggedDatasets[countOfStoredTags].timeArray.sort (function (a, b) {return a-b;});   // now we need sort!
-    var current = new Date();
-//alert ((current - sta) + 's');
-
   countOfStoredTags++;  
 }
 
@@ -247,7 +239,7 @@ var recursiveGet = function (startTime, endTime, separateNumber, plotArray, recu
       + "&end_time=" + parseInt (endTime / 1000) + "&limit=10000";
   var url = "../results/data?";
   url = url.concat (parameters);
-    //alert ("recursive");
+
   // send a HTTP GET request to the classifier server to get the data
   $.ajax (
   {
@@ -291,6 +283,7 @@ var getData = function (startTime, endTime, separateNumber, plotArray)
 };
 
 // calculate separateNumber depending on startTime and endTime
+// currently isn't used. Number is just set as 100.
 var calcSeparateNumber = function (startTime, endTime)
 {
   return Math.round ((endTime - startTime) / 10000000);
@@ -302,6 +295,9 @@ var returnLengthOfTaggedDatasets = function ()
   return taggedDatasets.length;
 }
 
+// -function displayStaticGraph-
+// main function for displaying static graph.
+var displayStaticGraph = function () {
 
   // These parameters can be changed.------------------------------
 
@@ -317,6 +313,8 @@ var returnLengthOfTaggedDatasets = function ()
   var startTime = defaultStartTime;
   var endTime = defaultEndTime;
   var plotArray;
+  
+  //var startHour = 0, startMinute = 0, endHour = 0, endMinute = 0;
 
   // initial time for calendar
   var initialStartYear = new Date();
@@ -337,19 +335,6 @@ var returnLengthOfTaggedDatasets = function ()
   var calendarInitialEndTime = parseInt (String (initialEndYear) 
       + String (initialEndMonth) + String (initialEndDate));
 
-
-
-// -function displayStaticGraph-
-// main function for displaying static graph.
-var displayStaticGraph = function () {
-
-  /*
-  // maybe we will show the default data first?
-  taggedDatasets = this.getData(selectedTags, startTime, endTime);
-  plotArray = this.setPlotArray(taggedDatasets, totalTweetsArray, separateNumber, startTime, endTime);
-  this.drawStaticGraph(plotArray);
-  */
-
   // when new tags are selected
   // Also, when this function is called first, first tags should be specified.
   $("#tagSelected-box").change (function ()   // if the tags are changed and entered
@@ -359,9 +344,6 @@ var displayStaticGraph = function () {
     if (selectedTags.match (/\S/g))           // space check by regular expression
     {      
       selectedTags = selectedTags.split (",");       // split with comma and store to array
-      //separateNumber = calcSeparateNumber (startTime, endTime);
-      //countOfStoredTags = 0;
-      //taggedDatasets.length = 0;
       getData (startTime, endTime, 100, plotArray);
     }
   });
@@ -371,8 +353,9 @@ var displayStaticGraph = function () {
   {
     cont : "start-calendar-container",
     inputField : "start-calendar-input",
-    showTime : true,
+    showTime : false,
     selection : [calendarInitialStartTime], // initialize
+    time : 0000,
     min : 20060101, // minimum date
     max : 20201231, // maximum date
     dateFormat : "%s", // format of date
@@ -413,28 +396,26 @@ var displayStaticGraph = function () {
           }
         }
       }
-    },
-
+    }
+    
+    /*
     // event when time is changed
     onTimeChange : function () 
     {
-      var hours = this.getHours ();
-      var minutes = this.getMinutes ();
-      // for displaying
-      /*
-       var time = hours + " : " + minutes;
-       var tibx = document.getElementById("start-calendar-time");
-       tibx.value = time;
-       */
+      startHour = this.getHours ();
+      startMinute = this.getMinutes ();
+      //alert (hours); 
     }
+    */
   });
 
   var endCal = Calendar.setup (
   {
     cont : "end-calendar-container",
     inputField : "end-calendar-input",
-    showTime : true,
+    showTime : false,
     selection : [calendarInitialEndTime], // initialize
+    time : 0000,
     min : 20060101, // minimum date
     max : 20201231, // maximum date
     dateFormat : "%s", // format of date
@@ -476,21 +457,51 @@ var displayStaticGraph = function () {
           }
         }
       }
-    },
+    }
 
     // event when time is changed
+    /*
     onTimeChange : function () 
     {
-      var hours = this.getHours ();
-      var minutes = this.getMinutes ();
-      // for displaying
-      /*
-       var time = hours + " : " + minutes;
-       var tibx = document.getElementById("end-calendar-time");
-       tibx.value = time;
-       */
+      endHour = this.getHours ();
+      endMinute = this.getMinutes ();
     }
+    */
   });
+  
+  /* 
+  // when time-apply button is clicked  
+  // doesn't work correctly
+  
+  $("#time-apply").click (function () 
+  {
+    // we need new variables
+    var currentStartTime = startTime + startHour * 60 * 60 * 1000 + startMinute * 60 * 1000;
+    var currentEndTime = endTime + endHour * 60 * 60 * 1000 + endMinute * 60 * 1000;
+
+    if (selectedTags.length !== 0)
+    {
+      if (!(currentStartTime < currentEndTime)) 
+      {
+        alert ("Enter start time < end time");
+      } else if (returnLengthOfTaggedDatasets !== 0) {
+         // if new time scope is outside of default time scope
+      if (isOutOfDefault (currentStartTime, currentEndTime, defaultStartTime, defaultEndTime)) 
+        {
+          getData (currentStartTime, ecurrentEdTime, separateNumber, plotArray);
+          defaultStartTime = currentStartTime;
+          defaultEndTime = currentEndTime;
+        } else {
+          plotArray = setPlotArray (separateNumber, currentStartTime, currentEndTime);
+          drawStaticGraph (plotArray);
+        }
+      }
+    }
+  })
+  */  
 };
+
 // implement
+$('#start-calendar-input').val("");
+$('#end-calendar-input').val("");
 displayStaticGraph ();

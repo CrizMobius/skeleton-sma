@@ -1,3 +1,6 @@
+.container{
+  width:900px;
+}
 #updateData{
 	float:left;
 	margin-top:10px;
@@ -8,20 +11,41 @@
 }
 
 #cal{
-  margin-left:80px;
   margin-bottom:300px;
+  text-align:center;
+}
+
+#placeholder{
+  width:800px;
+  height:400px;
+  margin-bottom:14px;
 }
 
 #start-cal{
   width:200px;
+  margin-left:140px;
+  margin-right:100px;
   float:left;
-}
-#time-apply{
-  margin:80px;
-  width:100px;
-  float:left;
+  text-align:center;
 }
 #end-cal{
   width:200px;
   float:left;
+  text-align:center;
+}
+#start-calendar-container{
+  text-align:center;
+}
+#end-calendar-container{
+  text-align:center;
+}
+#start-text{
+  font-size:20px;
+  margin-bottom:10px;
+  text-align:center;
+}
+#end-text{
+  font-size:20px;  
+  margin-bottom:10px;
+  text-align:center;
 }
