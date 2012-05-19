@@ -1,27 +1,17 @@
+.container{
+  width:900px;
+}
 #updateData{
-	float:left;
-	margin-top:10px;
+  float:left;
+  margin-top:10px;
 }
 .tagsWrapper{
-	float:left;
-	width:100%;
+  float:left;
+  width:100%;
 }
 
-#cal{
-  margin-left:80px;
-  margin-bottom:300px;
-}
-
-#start-cal{
-  width:200px;
-  float:left;
-}
-#time-apply{
-  margin:80px;
-  width:100px;
-  float:left;
-}
-#end-cal{
-  width:200px;
-  float:left;
+#placeholder{
+  width:800px;
+  height:400px;
+  margin-bottom:100px;
 }
